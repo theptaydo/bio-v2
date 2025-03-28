@@ -85,7 +85,8 @@ async function updateEmployeeInfo() {
 
 function generateVCard(employee) {
   const filename = `${employee.id}_${employee.name.replace(/\s+/g, '_')}.vcf`;
-  const vcfPath = `./vcf/${filename}`;
+  const vcfPath = `./.vcf/${filename}`;
+  // const vcfPath = `./.vcf/${employee.id}.vcf`;
   window.location.href = vcfPath; // Mở trực tiếp file .vcf
 }
 
@@ -93,7 +94,7 @@ function generateVCard(employee) {
 const saveBtn = document.getElementById('save-vcard-btn');
 if (saveBtn) {
   saveBtn.addEventListener('click', () => {
-    generateVCard(employee);
+    generateVCard(person);
   });
 }
 
